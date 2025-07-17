@@ -16,23 +16,23 @@ const staticProducts = [
     },
     items: [
       { 
-        primaryText: "10 messages per month",
-        secondaryText: "AI-powered chat responses"
+        primaryText: "5 brand monitors",
+        secondaryText: "Track up to 5 brands"
       },
       {
-        primaryText: "Community support",
-        secondaryText: "Get help from our community"
+        primaryText: "Daily monitoring",
+        secondaryText: "Check for updates once per day"
       },
       {
-        primaryText: "Basic features",
-        secondaryText: "Essential tools to get started"
+        primaryText: "Basic analytics",
+        secondaryText: "Essential insights and reports"
       }
     ]
   },
   {
     id: "pro",
     name: "Pro",
-    description: "For all your messaging needs",
+    description: "Advanced brand monitoring",
     recommendText: "Most Popular",
     price: {
       primaryText: "$10/month",
@@ -40,16 +40,16 @@ const staticProducts = [
     },
     items: [
       { 
-        primaryText: "100 messages per month",
-        secondaryText: "AI-powered chat responses"
+        primaryText: "Unlimited brand monitors",
+        secondaryText: "Track as many brands as you need"
       },
       {
-        primaryText: "Premium support",
-        secondaryText: "Get help from our team"
+        primaryText: "Real-time monitoring",
+        secondaryText: "Instant updates and alerts"
       },
       {
-        primaryText: "Priority access",
-        secondaryText: "Be first to try new features"
+        primaryText: "Advanced analytics",
+        secondaryText: "Deep insights and custom reports"
       }
     ]
   }

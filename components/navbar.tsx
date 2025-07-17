@@ -5,21 +5,6 @@ import Image from 'next/image';
 import { useSession, signOut } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { useCustomer } from '@/hooks/useAutumnCustomer';
-
-// Separate component that only renders when Autumn is available
-function UserCredits() {
-  const { customer } = useCustomer();
-  const messageUsage = customer?.features?.messages;
-  const remainingMessages = messageUsage ? (messageUsage.balance || 0) : 0;
-  
-  return (
-    <div className="flex items-center text-sm font-medium text-gray-700">
-      <span>{remainingMessages}</span>
-      <span className="ml-1">credits</span>
-    </div>
-  );
-}
 
 export function Navbar() {
   const { data: session, isPending } = useSession();
@@ -59,20 +44,12 @@ export function Navbar() {
 
           <div className="flex items-center space-x-4">
             {session && (
-              <>
-                <Link
-                  href="/chat"
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
-                >
-                  Basic Chat
-                </Link>
-                <Link
-                  href="/brand-monitor"
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
-                >
-                  Brand Monitor
-                </Link>
-              </>
+              <Link
+                href="/brand-monitor"
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
+              >
+                Brand Monitor
+              </Link>
             )}
             <Link
               href="/plans"
@@ -80,9 +57,6 @@ export function Navbar() {
             >
               Plans
             </Link>
-            {session && (
-              <UserCredits />
-            )}
             {isPending ? (
               <div className="text-sm text-gray-400">Loading...</div>
             ) : session ? (
