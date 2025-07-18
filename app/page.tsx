@@ -1,30 +1,30 @@
-'use client';
-
 import Link from "next/link";
-import { useState } from "react";
+import UnicornHero from "../components/brand-monitor/UnicornHero";
+import UnicornStudioRawEmbed from "../components/UnicornStudioRawEmbed";
 
 export default function Home() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-16 pb-24">
+      <section className="relative overflow-hidden bg-background pt-16 pb-24">
         
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-8 animate-fade-in-up">
-              <span className="block text-zinc-900">FireGEO Monitor</span>
-              <span className="block bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent">
-                AI Brand Visibility Platform
+              <span className="block text-foreground">SPID3R</span>
+              <span className="block bg-gradient-to-r from-[rgb(0,230,245)] to-[rgb(0,180,220)] bg-clip-text text-transparent">
+                Crawl + Sense + Script &gt The W3B.
               </span>
             </h1>
-            <p className="text-xl lg:text-2xl text-zinc-600 max-w-3xl mx-auto mb-6 animate-fade-in-up animation-delay-200">
+            <div className="flex justify-center mb-6">
+              <UnicornStudioRawEmbed />
+            </div>
+            <p className="mt-6 text-sm text-muted-foreground animate-fade-in-up animation-delay-600">
+              Powered by AI • Real-time Analysis • Competitor Tracking • SEO Insights
+            </p>
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 animate-fade-in-up animation-delay-200">
               Track how AI models rank your brand against competitors
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
@@ -41,29 +41,26 @@ export default function Home() {
                 View Pricing
               </Link>
             </div>
-            <p className="mt-6 text-sm text-zinc-500 animate-fade-in-up animation-delay-600">
-              Powered by AI • Real-time Analysis • Competitor Tracking • SEO Insights
-            </p>
           </div>
 
           {/* Stats */}
-          <div className="mt-20 bg-zinc-900 rounded-[20px] p-12 animate-fade-in-scale animation-delay-800">
+          <div className="mt-20 bg-card rounded-[20px] p-12 animate-fade-in-scale animation-delay-800">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center animate-fade-in-up animation-delay-1000">
-                <div className="text-4xl font-bold text-white">ChatGPT</div>
-                <div className="text-sm text-zinc-400 mt-1">Claude, Perplexity & More</div>
+                <div className="text-4xl font-bold text-foreground">ChatGPT</div>
+                <div className="text-sm text-muted-foreground mt-1">Claude, Perplexity & More</div>
               </div>
               <div className="text-center animate-fade-in-up animation-delay-1000" style={{animationDelay: '1100ms'}}>
-                <div className="text-4xl font-bold text-white">Real-time</div>
-                <div className="text-sm text-zinc-400 mt-1">Analysis</div>
+                <div className="text-4xl font-bold text-foreground">Real-time</div>
+                <div className="text-sm text-muted-foreground mt-1">Analysis</div>
               </div>
               <div className="text-center animate-fade-in-up animation-delay-1000" style={{animationDelay: '1200ms'}}>
-                <div className="text-4xl font-bold text-white">Competitor</div>
-                <div className="text-sm text-zinc-400 mt-1">Tracking</div>
+                <div className="text-4xl font-bold text-foreground">Competitor</div>
+                <div className="text-sm text-muted-foreground mt-1">Tracking</div>
               </div>
               <div className="text-center animate-fade-in-up animation-delay-1000" style={{animationDelay: '1300ms'}}>
-                <div className="text-4xl font-bold text-white">Actionable</div>
-                <div className="text-sm text-zinc-400 mt-1">Insights</div>
+                <div className="text-4xl font-bold text-foreground">Actionable</div>
+                <div className="text-sm text-muted-foreground mt-1">Insights</div>
               </div>
             </div>
           </div>
@@ -71,26 +68,26 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-50 rounded-[30px] p-16">
+          <div className="bg-card rounded-[30px] p-16">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-zinc-900 mb-4">
+              <h2 className="text-4xl font-bold text-foreground mb-4">
                 Monitor Your Brand Visibility
               </h2>
-              <p className="text-xl text-zinc-600">
+              <p className="text-xl text-muted-foreground">
                 Choose the plan that fits your monitoring needs
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Starter */}
-            <div className="bg-white p-8 rounded-[20px] border border-zinc-200 animate-fade-in-up animation-delay-400 hover:scale-105 transition-all duration-200">
-              <h3 className="text-2xl font-bold mb-2">Starter</h3>
-              <p className="text-zinc-600 mb-6">Perfect for personal brands</p>
+            <div className="bg-card p-8 rounded-[20px] border border-[rgb(0,230,245)] animate-fade-in-up animation-delay-400 hover:scale-105 transition-all duration-200">
+              <h3 className="text-2xl font-bold mb-2 text-foreground">Starter</h3>
+              <p className="text-muted-foreground mb-6">Perfect for personal brands</p>
               <div className="mb-6">
-                <span className="text-4xl font-bold">$0</span>
-                <span className="text-zinc-600">/month</span>
+                <span className="text-4xl font-bold text-foreground">$0</span>
+                <span className="text-muted-foreground">/month</span>
               </div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center">
@@ -121,15 +118,15 @@ export default function Home() {
             </div>
 
             {/* Pro - Featured */}
-            <div className="bg-white p-8 rounded-[20px] border-2 border-orange-500 relative animate-fade-in-up animation-delay-600 hover:scale-105 transition-all duration-200">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+            <div className="bg-card p-8 rounded-[20px] border-2 border-[rgb(0,230,245)] relative animate-fade-in-up animation-delay-600 hover:scale-105 transition-all duration-200">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[rgb(0,230,245)] text-white px-4 py-1 rounded-full text-sm font-medium">
                 Most Popular
               </div>
-              <h3 className="text-2xl font-bold mb-2">Pro</h3>
-              <p className="text-zinc-600 mb-6">For growing businesses</p>
+              <h3 className="text-2xl font-bold mb-2 text-foreground">Pro</h3>
+              <p className="text-muted-foreground mb-6">For growing businesses</p>
               <div className="mb-6">
-                <span className="text-4xl font-bold">$49</span>
-                <span className="text-zinc-600">/month</span>
+                <span className="text-4xl font-bold text-foreground">$49</span>
+                <span className="text-muted-foreground">/month</span>
               </div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center">
@@ -160,11 +157,11 @@ export default function Home() {
             </div>
 
             {/* Enterprise */}
-            <div className="bg-white p-8 rounded-[20px] border border-zinc-200 animate-fade-in-up animation-delay-800 hover:scale-105 transition-all duration-200">
-              <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
-              <p className="text-zinc-600 mb-6">For agencies & large brands</p>
+            <div className="bg-card p-8 rounded-[20px] border border-[rgb(0,230,245)] animate-fade-in-up animation-delay-800 hover:scale-105 transition-all duration-200">
+              <h3 className="text-2xl font-bold mb-2 text-foreground">Enterprise</h3>
+              <p className="text-muted-foreground mb-6">For agencies & large brands</p>
               <div className="mb-6">
-                <span className="text-4xl font-bold">Custom</span>
+                <span className="text-4xl font-bold text-foreground">Custom</span>
               </div>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center">
@@ -196,7 +193,7 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12">
-              <Link href="/plans" className="text-orange-600 hover:text-orange-700 font-medium">
+              <Link href="/plans" className="bg-[rgb(0,230,245)] hover:bg-[rgb(0,200,220)] text-white border border-[rgb(0,230,245)] inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-sm font-medium transition-all duration-200 h-10 px-4">
                 View detailed pricing →
               </Link>
             </div>
@@ -206,9 +203,9 @@ export default function Home() {
 
 
       {/* CTA Section 1 */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-[30px] p-16 text-center">
+          <div className="bg-gradient-to-r from-[rgb(0,230,245)] to-[rgb(0,180,220)] rounded-[30px] p-16 text-center">
             <h2 className="text-4xl font-bold text-white mb-6">
               See How AI Models Rank Your Brand
             </h2>
@@ -227,163 +224,88 @@ export default function Home() {
 
 
       {/* FAQs */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-zinc-900 mb-4 animate-fade-in-up">
+            <h2 className="text-4xl font-bold text-foreground mb-4 animate-fade-in-up">
               Frequently asked questions
             </h2>
-            <p className="text-xl text-zinc-600 animate-fade-in-up animation-delay-200">
-              Everything you need to know about FireGEO Monitor
+            <p className="text-xl text-muted-foreground animate-fade-in-up animation-delay-200">
+              Everything you need to know about SPID3R
             </p>
           </div>
 
           <div className="space-y-4">
             {/* FAQ 1 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-400">
-              <button
-                onClick={() => toggleFaq(0)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
-                  How does FireGEO Monitor work?
+            <div className="bg-card rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-400">
+              <div className="px-6 py-5">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  How does SPID3R Monitor work?
                 </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 0 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 0 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    FireGEO Monitor analyzes your brand's visibility across major AI platforms like ChatGPT, Claude, and Perplexity. Simply enter your website URL, and we'll show you how AI models rank your brand against competitors, what prompts trigger your appearance, and provide actionable insights to improve your AI visibility.
-                  </p>
-                </div>
-              )}
+                <p className="text-muted-foreground leading-relaxed">
+                  SPID3R analyzes your brand's visibility across major AI platforms like ChatGPT, Claude, and Perplexity. Simply enter your website URL, and we'll show you how AI models rank your brand against competitors, what prompts trigger your appearance, and provide actionable insights to improve your AI visibility.
+                </p>
+              </div>
             </div>
 
             {/* FAQ 2 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-400" style={{animationDelay: '500ms'}}>
-              <button
-                onClick={() => toggleFaq(1)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
+            <div className="bg-card rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-500">
+              <div className="px-6 py-5">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   Which AI providers do you monitor?
                 </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 1 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 1 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    We monitor all major AI platforms including OpenAI's ChatGPT, Anthropic's Claude, Perplexity, Google's Gemini, and more. Our system continuously updates as new AI providers emerge, ensuring you always have comprehensive visibility across the AI landscape.
-                  </p>
-                </div>
-              )}
+                <p className="text-muted-foreground leading-relaxed">
+                  We monitor all major AI platforms including OpenAI's ChatGPT, Anthropic's Claude, Perplexity, Google's Gemini, and more. Our system continuously updates as new AI providers emerge, ensuring you always have comprehensive visibility across the AI landscape.
+                </p>
+              </div>
             </div>
 
             {/* FAQ 3 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-600">
-              <button
-                onClick={() => toggleFaq(2)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
+            <div className="bg-card rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-600">
+              <div className="px-6 py-5">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   How often is the data updated?
                 </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 2 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 2 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    Our monitoring runs in real-time. When you request an analysis, we query all AI providers simultaneously to get the most current results. You can run new analyses anytime to track changes in your brand visibility and see how your optimization efforts are performing.
-                  </p>
-                </div>
-              )}
+                <p className="text-muted-foreground leading-relaxed">
+                  Our monitoring runs in real-time. When you request an analysis, we query all AI providers simultaneously to get the most current results. You can run new analyses anytime to track changes in your brand visibility and see how your optimization efforts are performing.
+                </p>
+              </div>
             </div>
 
             {/* FAQ 4 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-400" style={{animationDelay: '700ms'}}>
-              <button
-                onClick={() => toggleFaq(3)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
+            <div className="bg-card rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-700">
+              <div className="px-6 py-5">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   What insights will I get?
                 </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 3 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 3 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    You'll see your brand's visibility score, competitor rankings, which prompts trigger your appearance, response quality analysis, and specific recommendations to improve your AI presence. The platform also tracks trends over time and alerts you to significant changes.
-                  </p>
-                </div>
-              )}
+                <p className="text-muted-foreground leading-relaxed">
+                  You'll see your brand's visibility score, competitor rankings, which prompts trigger your appearance, response quality analysis, and specific recommendations to improve your AI presence. The platform also tracks trends over time and alerts you to significant changes.
+                </p>
+              </div>
             </div>
 
             {/* FAQ 5 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-800">
-              <button
-                onClick={() => toggleFaq(4)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
+            <div className="bg-card rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-800">
+              <div className="px-6 py-5">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   How many credits do I need?
                 </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 4 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 4 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    Each brand analysis uses 10 credits (1 credit for initial URL analysis, 9 credits for the full AI provider scan). The free tier includes 100 credits monthly, enough for 10 complete analyses. Pro plans include unlimited analyses for comprehensive monitoring.
-                  </p>
-                </div>
-              )}
+                <p className="text-muted-foreground leading-relaxed">
+                  Each brand analysis uses 10 credits (1 credit for initial URL analysis, 9 credits for the full AI provider scan). The free tier includes 100 credits monthly, enough for 10 complete analyses. Pro plans include unlimited analyses for comprehensive monitoring.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-zinc-900">
+      <section className="py-24 bg-card">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
             Start Monitoring Your AI Brand Visibility
           </h2>
-          <p className="text-xl text-zinc-400 mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             Take control of how AI models present your brand
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -395,7 +317,7 @@ export default function Home() {
             </Link>
             <Link
               href="/plans"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-base font-medium transition-all duration-200 h-12 px-8 bg-zinc-800 text-white hover:bg-zinc-700"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-base font-medium transition-all duration-200 h-12 px-8 bg-background text-foreground hover:bg-secondary"
             >
               View Pricing
             </Link>

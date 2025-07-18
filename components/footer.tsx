@@ -3,15 +3,15 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="bg-white text-zinc-600 border-t border-zinc-200">
+    <footer className="bg-background text-muted-foreground border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and description */}
           <div className="col-span-1 md:col-span-2">
             <div className="mb-4">
               <Image
-                src="/firecrawl-logo-with-fire.webp"
-                alt="Firecrawl"
+                src="/spid3r-logo.png"
+                alt="SPID3R"
                 width={120}
                 height={25}
               />
@@ -22,7 +22,7 @@ export function Footer() {
             <div className="flex space-x-4">
               <a
                 href="https://github.com/firecrawl"
-                className="text-zinc-400 hover:text-zinc-900 transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -32,7 +32,7 @@ export function Footer() {
               </a>
               <a
                 href="https://twitter.com/firecrawl"
-                className="text-zinc-400 hover:text-zinc-900 transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -42,7 +42,7 @@ export function Footer() {
               </a>
               <a
                 href="https://discord.gg/firecrawl"
-                className="text-zinc-400 hover:text-zinc-900 transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -55,25 +55,25 @@ export function Footer() {
 
           {/* Product */}
           <div>
-            <h3 className="text-zinc-900 font-semibold mb-4">Product</h3>
+            <h3 className="text-foreground font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/plans" className="hover:text-zinc-900 transition-colors">
+                <Link href="/plans" className="hover:text-foreground transition-colors">
                   Plans
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-zinc-900 transition-colors">
+                <a href="#" className="hover:text-foreground transition-colors">
                   Documentation
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-zinc-900 transition-colors">
+                <a href="#" className="hover:text-foreground transition-colors">
                   API Reference
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-zinc-900 transition-colors">
+                <a href="#" className="hover:text-foreground transition-colors">
                   Demo
                 </a>
               </li>
@@ -82,25 +82,25 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-zinc-900 font-semibold mb-4">Company</h3>
+            <h3 className="text-foreground font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-zinc-900 transition-colors">
+                <a href="#" className="hover:text-foreground transition-colors">
                   About
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-zinc-900 transition-colors">
+                <a href="#" className="hover:text-foreground transition-colors">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-zinc-900 transition-colors">
+                <a href="#" className="hover:text-foreground transition-colors">
                   Careers
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-zinc-900 transition-colors">
+                <a href="#" className="hover:text-foreground transition-colors">
                   Contact
                 </a>
               </li>
@@ -114,10 +114,10 @@ export function Footer() {
               © {new Date().getFullYear()} Firecrawl. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm hover:text-zinc-900 transition-colors">
+              <a href="#" className="text-sm hover:text-foreground transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm hover:text-zinc-900 transition-colors">
+              <a href="#" className="text-sm hover:text-foreground transition-colors">
                 Terms of Service
               </a>
             </div>
