@@ -1,11 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { apiRateLimit } from '@/lib/rate-limit';
-import { Anthropic } from '@anthropic-ai/sdk';
-
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+import { generateText } from 'ai';
+import { getProviderModel } from '@/lib/provider-config';
 
 export async function POST(request: NextRequest) {
   try {
@@ -78,6 +75,12 @@ async function performWebSearch(query: string) {
 }
 
 async function analyzeWithClaude(query: string, searchResults: any[]) {
+  const model = getProviderModel('anthropic', 'claude-3-5-sonnet-20241022');
+  
+  if (!model) {
+    throw new Error('Anthropic model not available');
+  }
+
   const systemPrompt = `You are a research assistant. Analyze the provided search results and synthesize a comprehensive answer to the user's query. 
 
 Guidelines:
@@ -98,22 +101,17 @@ User Query: ${query}
 
 Please provide a comprehensive analysis:`;
 
-  const response = await anthropic.messages.create({
-    model: 'claude-3-5-sonnet-20241022',
-    max_tokens: 4000,
+  const { text } = await generateText({
+    model,
     system: systemPrompt,
-    messages: [
-      {
-        role: 'user',
-        content: `Please analyze the search results and provide a comprehensive answer to: ${query}`
-      }
-    ]
+    prompt: `Please analyze the search results and provide a comprehensive answer to: ${query}`,
+    maxTokens: 4000,
   });
 
   return [
     {
       title: 'AI Analysis',
-      content: response.content[0].type === 'text' ? response.content[0].text : 'Analysis completed',
+      content: text,
       source: 'Claude AI',
       type: 'analysis'
     },
