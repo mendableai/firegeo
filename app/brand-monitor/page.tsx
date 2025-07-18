@@ -2,7 +2,7 @@
 
 import { BrandMonitor } from '@/components/brand-monitor/brand-monitor';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Sparkles, Menu, X, Plus, Trash2, Loader2 } from 'lucide-react';
 import { useCustomer, useRefreshCustomer } from '@/hooks/useAutumnCustomer';
 import { useBrandAnalyses, useBrandAnalysis, useDeleteBrandAnalysis } from '@/hooks/useBrandAnalyses';
@@ -14,6 +14,7 @@ import { ConfirmationDialog } from '@/components/ui/confirmation-dialog';
 // Separate component that uses Autumn hooks
 function BrandMonitorContent({ session }: { session: any }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { customer, isLoading, error } = useCustomer();
   const refreshCustomer = useRefreshCustomer();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -164,6 +165,7 @@ function BrandMonitorContent({ session }: { session: any }) {
               creditsAvailable={credits} 
               onCreditsUpdate={handleCreditsUpdate}
               selectedAnalysis={selectedAnalysisId ? currentAnalysis : null}
+              initialDomain={searchParams.get('domain') || undefined}
               onSaveAnalysis={(analysis) => {
                 // This will be called when analysis completes
                 // We'll implement this in the next step

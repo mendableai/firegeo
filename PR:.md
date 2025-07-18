@@ -165,6 +165,10 @@ I started this project based off of this repo: https://github.com/mendableai/fir
      ☒ ✅ COMPLETED: Create Pull Request on GitHub
      ☒ ✅ COMPLETED: Test integration functionality
      ☒ ✅ COMPLETED: Polish and finalize
+     ☒ ✅ FIXED: Align research API with SPID3R's AI SDK pattern
      ☐ Add real Firecrawl web search integration
      ☐ Test with real queries
      ☐ Polish UI based on feedback
+     ☐ ✅ NEW FEATURE: Add domain search box to home page
+     ☐ ✅ NEW FEATURE: Integrate with Autumn signup flow
+     ☐ ✅ NEW FEATURE: Require free plan signup for domain search

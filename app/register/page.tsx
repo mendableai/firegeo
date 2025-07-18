@@ -1,17 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 import { signUp } from '@/lib/auth-client';
 
 export default function RegisterPage() {
+  const searchParams = useSearchParams();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [showExistingAccountOptions, setShowExistingAccountOptions] = useState(false);
+  const [domain, setDomain] = useState('');
+
+  // Get domain from URL params
+  useEffect(() => {
+    const domainParam = searchParams.get('domain');
+    if (domainParam) {
+      setDomain(domainParam);
+    }
+  }, [searchParams]);
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,8 +42,9 @@ export default function RegisterPage() {
         // Wait a moment for the session to be properly set
         await new Promise(resolve => setTimeout(resolve, 100));
         
-        // Force a hard navigation to ensure cookies are sent
-        window.location.href = '/';
+        // Redirect to brand monitor with domain if provided, otherwise to home
+        const redirectUrl = domain ? `/brand-monitor?domain=${encodeURIComponent(domain)}` : '/';
+        window.location.href = redirectUrl;
       } else {
         throw response.error;
       }
@@ -106,6 +118,13 @@ export default function RegisterPage() {
             <h2 className="text-center text-3xl font-extrabold text-gray-900">
               Create your account
             </h2>
+            {domain && (
+              <div className="mt-2 text-center">
+                <p className="text-sm text-gray-600 mb-2">
+                  Ready to analyze <span className="font-semibold text-orange-600">{domain}</span>
+                </p>
+              </div>
+            )}
             <p className="mt-2 text-center text-sm text-gray-600">
               Or{' '}
               <Link href="/login" className="font-medium text-orange-600 hover:text-orange-500">

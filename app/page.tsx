@@ -1,6 +1,7 @@
 import Link from "next/link";
 import UnicornHero from "../components/brand-monitor/UnicornHero";
 import UnicornStudioRawEmbed from "../components/UnicornStudioRawEmbed";
+import DomainSearch from "../components/domain-search";
 
 export default function Home() {
 
@@ -15,7 +16,7 @@ export default function Home() {
             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-8 animate-fade-in-up">
               <span className="block text-foreground">SPID3R</span>
               <span className="block bg-gradient-to-r from-[rgb(0,230,245)] to-[rgb(0,180,220)] bg-clip-text text-transparent">
-                Crawl + Sense + Script &gt The W3B.
+                Crawl + Sense + Script &gt; The W3B.
               </span>
             </h1>
             <div className="flex justify-center mb-6">
@@ -24,9 +25,15 @@ export default function Home() {
             <p className="mt-6 text-sm text-muted-foreground animate-fade-in-up animation-delay-600">
               Powered by AI • Real-time Analysis • Competitor Tracking • SEO Insights
             </p>
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 animate-fade-in-up animation-delay-200">
+            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               Track how AI models rank your brand against competitors
             </p>
+            
+            {/* Domain Search */}
+            <div className="mb-8 animate-fade-in-up animation-delay-300">
+              <DomainSearch />
+            </div>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Link
                 href="/brand-monitor"

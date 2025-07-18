@@ -44,13 +44,15 @@ interface BrandMonitorProps {
   onCreditsUpdate?: () => void;
   selectedAnalysis?: any;
   onSaveAnalysis?: (analysis: any) => void;
+  initialDomain?: string;
 }
 
 export function BrandMonitor({ 
   creditsAvailable = 0, 
   onCreditsUpdate,
   selectedAnalysis,
-  onSaveAnalysis 
+  onSaveAnalysis,
+  initialDomain
 }: BrandMonitorProps = {}) {
   const [state, dispatch] = useReducer(brandMonitorReducer, initialBrandMonitorState);
   const [demoUrl] = useState('example.com');
@@ -126,6 +128,13 @@ export function BrandMonitor({
   
   // Remove the auto-save effect entirely - we'll save manually when analysis completes
   
+  // Set initial domain if provided
+  useEffect(() => {
+    if (initialDomain && !selectedAnalysis) {
+      handleUrlChange(initialDomain);
+    }
+  }, [initialDomain, selectedAnalysis]);
+
   // Load selected analysis if provided or reset when null
   useEffect(() => {
     if (selectedAnalysis && selectedAnalysis.analysisData) {
