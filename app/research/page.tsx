@@ -48,7 +48,8 @@ export default function ResearchPage() {
       });
 
       if (!response.ok) {
-        throw new Error('Research failed');
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'Research failed');
       }
 
       const data = await response.json();

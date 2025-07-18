@@ -48,7 +48,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       results: analysis,
       sources: searchResults.map(result => result.url),
-      query
+      query,
+      timestamp: new Date().toISOString(),
+      status: 'completed'
     });
 
   } catch (error) {
